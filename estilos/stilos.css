@@ -6,9 +6,23 @@ body{
     background-color:rgb(221, 186, 254);
 }
 main{
+    position: absolute;
+    top: 0%;
+    left: 25%;
     background-color: rgb(255, 255, 255);
     width: 500px;
     margin: auto;
     padding: 10px;
     box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.47);
+}
+.imgPerfil{
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    width: 460px;
+    height: auto;
+    border: solid 2px black;
+    position: relative;
+    left:10%;
+	top:0%;
 }
