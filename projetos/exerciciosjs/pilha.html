@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementação de pilha!</title>
+    <script>
+    function   Pilha(){
+        this.vetor = new Array();
+        this.ponteiro = -1;
+        
+        this.isEmpty = function(){
+            if(this.ponteiro==-1){
+                return true;
+            }else{
+                return false;            }
+        }
+        this.size = function(){
+            if(this.isEmpty){
+                return 0;
+            }
+            return this.ponteiro;
+
+        }
+        this.pop = function(){
+        if(this.isEmpty()){
+            return "A Pilha está vazia";
+        }
+           var retirado = this.vetor[this.ponteiro];
+           this.ponteiro--;
+           return "Elemento retirado: "+ retirado;
+        }
+        this.push = function(e){
+                    this.ponteiro++;
+                    this.vetor[this.ponteiro]=e;
+                    return alert("Push: Inserido "+this.vetor[this.ponteiro]+" no ponteiro: "+this.ponteiro);
+
+        }
+        this.top = function(){
+                    return this.vetor[this.ponteiro];
+
+        }
+    }
+    var p = new Pilha();
+    p.push('a');
+    p.push('b');
+    p.push('c');
+
+    alert(p.pop());
+    alert(p.pop());
+    alert(p.pop());
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>
