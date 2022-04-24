@@ -5,41 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Implementação de pilha!</title>
+    <title>Implementação de pilha em JavaScript</title>
     <script>
     function   Pilha(){
+        //inicialização da pilha criando um vetor para armazenar os elemento e resetando o contador para -1
         this.vetor = new Array();
-        this.ponteiro = -1;
-        
+        this.contador = -1;
+        //função que recebe um valor "e", aumenta o contador em 1, armazena o valor recebido no vetor na posição atual do contador e retorna o valor armazenado
+        this.push = function(e){
+                    this.contador++;
+                    this.vetor[this.contador]=e;
+                    return alert("Push: Inserido "+this.vetor[this.contador]+" no contador: "+this.contador);
+
+        }
+        //verifica se a pilha está vazia
         this.isEmpty = function(){
-            if(this.ponteiro==-1){
+            if(this.contador==-1){
                 return true;
             }else{
                 return false;            }
         }
+        //retorna o tamanho da pilha e se estiver vazia o tamanho é igual a zero
         this.size = function(){
             if(this.isEmpty){
                 return 0;
             }
-            return this.ponteiro;
+            return this.contador;
 
         }
+        //retira um elemento da pilha. Incrementa o contador em -1 e depois mostra o elemento returado.
         this.pop = function(){
         if(this.isEmpty()){
             return "A Pilha está vazia";
         }
-           var retirado = this.vetor[this.ponteiro];
-           this.ponteiro--;
+           var retirado = this.vetor[this.contador];
+           this.contador--;
            return "Elemento retirado: "+ retirado;
         }
-        this.push = function(e){
-                    this.ponteiro++;
-                    this.vetor[this.ponteiro]=e;
-                    return alert("Push: Inserido "+this.vetor[this.ponteiro]+" no ponteiro: "+this.ponteiro);
-
-        }
+        //Mostra o elemento que está no top da pilha
         this.top = function(){
-                    return this.vetor[this.ponteiro];
+                    return "TOP: o elemnto do top é: "+this.vetor[this.contador];
 
         }
     }
@@ -47,7 +52,7 @@
     p.push('a');
     p.push('b');
     p.push('c');
-
+    alert(p.top());
     alert(p.pop());
     alert(p.pop());
     alert(p.pop());
