@@ -27,10 +27,10 @@
         }
         //retorna o tamanho da pilha e se estiver vazia o tamanho é igual a zero
         this.size = function(){
-            if(this.isEmpty){
+            if(this.isEmpty()){
                 return 0;
             }
-            return this.contador;
+            return this.contador+1;
 
         }
         //retira um elemento da pilha. Incrementa o contador em -1 e depois mostra o elemento returado.
@@ -44,15 +44,16 @@
         }
         //Mostra o elemento que está no top da pilha
         this.top = function(){
-                    return "TOP: o elemnto do top é: "+this.vetor[this.contador];
+                    return this.vetor[this.contador];
 
         }
     }
     var p = new Pilha();
-    p.push('a');
-    p.push('b');
-    p.push('c');
-    alert(p.top());
+    p.push('Elemento a');
+    p.push('Elemento b');
+    p.push('Elemento c');
+    alert("A pilha tem "+p.size()+" elementos e o "+p.top()+" está no topo");
+    alert("O tamanho da pilha é :"+ p.size());
     alert(p.pop());
     alert(p.pop());
     alert(p.pop());
